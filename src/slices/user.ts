@@ -15,6 +15,7 @@ const userSlice = createSlice({
       state.accessToken = action.payload.accessToken;
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   extraReducers: builder => {},
 });
 
