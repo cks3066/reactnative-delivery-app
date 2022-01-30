@@ -1,10 +1,16 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {Pressable, Text, View} from 'react-native';
 
 function Settings() {
+  const [count, setCount] = useState(1);
   return (
     <View>
-      <Text>설정</Text>
+      <Pressable
+        onPress={() => {
+          setCount(p => p + 1);
+        }}>
+        <Text>{count}</Text>
+      </Pressable>
     </View>
   );
 }

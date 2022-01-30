@@ -4,7 +4,7 @@ import {Text, View} from 'react-native';
 function Ing() {
   return (
     <View>
-      <Text>Ing</Text>
+      <Text>진행중</Text>
     </View>
   );
 }
