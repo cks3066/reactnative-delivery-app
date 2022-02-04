@@ -65,17 +65,24 @@ function SignUp({navigation}: SignUpScreenProps) {
     console.log(email, name, password);
     try {
       setLoading(true);
+      var URL = null;
+      if (Platform.OS === 'android') {
+        URL = Config.API_URL_ANDROID;
+      } else {
+        URL = Config.API_URL_IOS;
+      }
       console.log(Config.API_URL);
-      const response = await axios.post(
-        `${Config.API_URL}/user`,
-        {email, name, password},
-        {headers: {token: '고유한 값'}},
-      );
+      const response = await axios.post(`${URL}/user`, {
+        email,
+        name,
+        password,
+      });
       console.log(response);
       Alert.alert('알림', '회원가입 되었습니다.');
     } catch (error) {
       const errorResponse = (error as AxiosError).response;
       console.error(errorResponse);
+      console.dir(error);
       if (errorResponse) {
         Alert.alert('알림', errorResponse.data.message);
       }
