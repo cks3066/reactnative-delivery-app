@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../App';
+import {RootStackParamList} from '../../AppInner';
 import DissmissKeyBoardView from '../components/DissmissKeyBoardView';
 import axios, {AxiosError} from 'axios';
 import Config from 'react-native-config';
@@ -65,7 +65,7 @@ function SignUp({navigation}: SignUpScreenProps) {
     console.log(email, name, password);
     try {
       setLoading(true);
-      var URL = null;
+      let URL = null;
       if (Platform.OS === 'android') {
         URL = Config.API_URL_ANDROID;
       } else {
@@ -82,7 +82,6 @@ function SignUp({navigation}: SignUpScreenProps) {
     } catch (error) {
       const errorResponse = (error as AxiosError).response;
       console.error(errorResponse);
-      console.dir(error);
       if (errorResponse) {
         Alert.alert('알림', errorResponse.data.message);
       }
