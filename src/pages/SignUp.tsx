@@ -71,7 +71,6 @@ function SignUp({navigation}: SignUpScreenProps) {
       } else {
         URL = Config.API_URL_IOS;
       }
-      console.log(Config.API_URL);
       const response = await axios.post(`${URL}/user`, {
         email,
         name,
