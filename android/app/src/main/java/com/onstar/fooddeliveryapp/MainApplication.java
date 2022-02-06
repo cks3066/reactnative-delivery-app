@@ -1,4 +1,4 @@
-package com.fooddeliveryapp;
+package com.onstar.fooddeliveryapp;
 
 import android.app.Application;
 import android.content.Context;

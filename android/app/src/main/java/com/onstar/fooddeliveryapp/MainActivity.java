@@ -1,4 +1,4 @@
-package com.fooddeliveryapp;
+package com.onstar.fooddeliveryapp;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;

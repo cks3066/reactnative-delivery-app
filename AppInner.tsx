@@ -17,7 +17,6 @@ import userSlice from './src/slices/user';
 import {useAppDispatch} from './src/store';
 import Config from 'react-native-config';
 import orderSlice from './src/slices/order';
-import {NavigationContainer} from '@react-navigation/native';
 
 export type LoggedInParamList = {
   Orders: undefined;
